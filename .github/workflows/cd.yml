@@ -28,6 +28,8 @@ jobs:
             cd ~
             cd seminar/github-action
             git pull origin master
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh 
             npm install
             npm run build
             pm2 delete seminar
