@@ -25,6 +25,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 22
           script: |
+            cd ~
             cd seminar/github-action
             git pull origin master
             npm install
