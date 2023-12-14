@@ -26,7 +26,8 @@ jobs:
   deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    needs: build # Wait for the "build" job to complete before starting the "deploy" job
+    if: success() # Only run the "deploy" job if the "build" job is successful
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Deploy using ssh
